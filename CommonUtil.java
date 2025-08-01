@@ -1,0 +1,64 @@
+package com.tridel.tems_sensor_service.util;
+
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+
+public class CommonUtil {
+    public static final int METID = 3;
+    public static final String USER_NOT_FOUND= "User not found";
+    public static final String UNIT_NOT_FOUND= "Unit not found";
+    public static final String PARAMETER_NOT_FOUND= "Parameter not found";
+    public static final String SUCCESSFULLY_UPDATED=   "Successfully Updated";
+    public static final String STATION_TYPE_NOT_FOUND= "Station Type not found";
+    public static final String PARAM_NOT_FOUND= "Parameter not found";
+    public static final String PARAMNAME = "Battery Voltage";
+    public static final String STN_NOT_FOUND = "Station not found";
+    public static final String SENSOR_CODE = "Sensor Code not found";
+    public static final String DATE_NOT_FOUND = "Date not found";
+    public static final String OTHER ="other";
+    public static final String MAINTENACELEGEND= "maintenance.png";
+    public static final String dateFormat3 = "yyyy-MM-dd HH:mm:ss";
+    public static final String MAGENTALEGEND= "magenta.png";
+    public static final String DANGERLEGEND= "danger.png";
+    public static final String OFFLINELEGEND= "inactive.png";
+    public static final String LOAD_STATIONS_FAILED="Load Station details failed";
+    public static final String FETCH_SENSOR_FAILED="Fetch Sensor details failed";
+    public static final String LATITUDE="Latitude";
+    public static final String LONGITUDE="Longitude";
+    public static final String SWITCH_STATE="Switch State";
+    public static final String IS_TRUE="1";
+    public static final String STATIONNAME="Station Name";
+    public static final String DATE="Date";
+    public static final String TIME="Time";
+    public static final String VISIBILITY = "Visibility";
+    public static final String RAINFALL = "Rainfall";
+    public static final String ONE_MIN_DATA_FETCH_FAIL ="One min data fetch failed ";
+    public static final String INTERVAL_DATA_FETCH_FAIL ="Interval Report data fetch failed ";
+    public static final String HOURLY_DATA_FETCH_FAIL ="Hourly Report data fetch failed ";
+    public static final String CLIMATE_FETCH_FAIL ="Climate Report data fetch failed ";
+    public static final String MSG = "Message";
+    public static final String SUCCESS = "SUCCESS";
+    public static final String SUCCESS_ADD = "Successfully Added";
+    public static final String SUCCESS_DELETE = "Successfully Deleted";
+    public static final String ERROR = "ERROR";
+    public static final String USER_AGENT = "USER-AGENT";
+    public static final String USER_AGENT_STR = " User Agents: ";
+    public static final String REMOTE_ADDR = "Remote Address : ";
+    public static final DateTimeFormatter formatter3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    public static final DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    public static final DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    public static final SimpleDateFormat dateFormat5 = new SimpleDateFormat("yyyy-MM-dd");
+    public static final SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static final SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    public static final SimpleDateFormat dateFormat4= new SimpleDateFormat("dd/MM/yyyy HH:mm");
+    public static final SimpleDateFormat dateFormat6= new SimpleDateFormat("HH:mm");
+    public static final String WINDSPEED = "Wind Speed";
+    public static final String WINDDIRECTION = "Wind Direction";
+    public static final String WINDGUSTSPEED = "Wind Gust Speed 2m";
+    public static final String WINDGUSTDIRECTION = "Wind Gust Direction 2m";
+    public static String communicationEmailMsg1 = "Dear, <br /> <br /> <b> <font color=red> Attention - </b> Communication lost for below station(s): </font><br /><br /> " ;
+    public static String communicationEmailMsg2 = "<br />  Kindly ignore this message if attended.<br />";
+    public static String communicationEmailMsg3 = "<br /> <br /> Regards, <br /> Support";
+
+    public static String communicationScheduleSubject = "IMPORTANT: TEMS - Communication lost";
+}
