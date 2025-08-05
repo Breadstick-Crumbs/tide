@@ -92,14 +92,20 @@ public class DataManagementServiceImpl implements DataManagementService {
     @Override
     @Transactional
     public String editQCData(EditQCRequest req) {
-        if (req.getLoggedIn()     == null) throw new TemsBadRequestException(USER_NOT_FOUND);
-        if (req.getStationId()    == null) throw new TemsBadRequestException(STN_NOT_FOUND);
-        if (req.getSensorCode()   == null) throw new TemsBadRequestException(SENSOR_CODE);
-        if (req.getParamDatetime()== null) throw new TemsBadRequestException(DATE_NOT_FOUND);
 
-        /* only derive table name when the caller didn't give one explicitly */
+        if (req.getLoggedIn()      == null) throw new TemsBadRequestException(USER_NOT_FOUND);
+        if (req.getStationId()     == null) throw new TemsBadRequestException(STN_NOT_FOUND);
+        if (req.getSensorCode()    == null) throw new TemsBadRequestException(SENSOR_CODE);
+        if (req.getParamDatetime() == null) throw new TemsBadRequestException(DATE_NOT_FOUND);
+
         if (req.getSensorTableCode() == null || req.getSensorTableCode().isBlank()) {
-            req.setSensorTableCode("sensor_" + req.getSensorCode().toLowerCase());
+            String tbl = sensorParamViewRepository
+                    .findTableNameBySensorCode(req.getSensorCode());
+
+            if (tbl == null || tbl.isBlank()) {
+                throw new TemsBadRequestException("UNKNOWN_SENSOR_CODE");
+            }
+            req.setSensorTableCode(tbl.trim());
         }
 
         return dataServiceCircuitBreakerWrapper.editQCData(req);
