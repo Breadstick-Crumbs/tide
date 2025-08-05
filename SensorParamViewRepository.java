@@ -131,4 +131,11 @@ public interface SensorParamViewRepository extends JpaRepository<SensorParamsVie
             "displayRoundTo,unitSymbol,sensorId,sensorCode,sensorTableName,sensorStatusTableName,sensorName,notifyFlag,sensorOrder)" +
             " from SensorParamsView spv where appParamEnabled is true and paramName = :paramName")
     SensorParamView findByParameterName(String paramName);
+
+    @Query("""
+       select distinct spv.sensorTableName
+       from   SensorParamsView spv
+       where  spv.sensorCode = :sensorCode
+       """)
+    String findTableNameBySensorCode(String sensorCode);
 }
